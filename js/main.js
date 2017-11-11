@@ -31,7 +31,11 @@ $(document).ready(function(){
 
 	  showBoard: function(){
 	    for(var i = 0; i < 9; i++){
-	      console.log(this.value[i]);
+	      if(i == 3 || i == 6){
+	        $('#grid').append('<div id="'+i+'" class="cell block"></div>');
+	      } else {
+	      	 $('#grid').append('<div id="'+i+'" class="cell"></div>');
+	      }
 	    }
 	  }
 	}
@@ -39,7 +43,9 @@ $(document).ready(function(){
 	var $grid = {
 	  value: '',
 	  showGrid: function(){
+	    for(var i = 0; i < value.length;i++){
 
+	    }
 	  },
 	  createGrid: function(){
 	  	var x = 9;

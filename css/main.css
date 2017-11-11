@@ -1,3 +1,23 @@
 .test{
   background-color: red;
 }
+
+#grid{
+  height: 150px;
+  width: 150px;
+  background-color: yellow;
+}
+
+
+
+.cell{
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  display: inline-block;
+}
+
+
+.block{
+  
+}
