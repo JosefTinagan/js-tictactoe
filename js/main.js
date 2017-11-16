@@ -14,29 +14,37 @@ $(document).ready(function(){
 	}
 
 	function Board(){
-	  this.value = '';
+	  this.grid = '';
 
 	}
 
 	Board.prototype = {
 	  constructor: Board,
 
+	  updateValue: function(param,new_value){
+	    this.grid[param].value = new_value;
+	  },
+
 	  createBoard: function(){
 	    var temp = [];
 	    for(var i = 0; i < 9; i++){
 	      temp.push(new Cell());
 	    }
-	    this.value = temp;
+	    this.grid = temp;
 	  },
 
 	  showBoard: function(){
 	    for(var i = 0; i < 9; i++){
 	      if(i == 3 || i == 6){
-	        $('#grid').append('<div id="'+i+'" class="cell block"></div>');
+	        $('#grid').append('<div id="'+i+'" class="cell block"> <div>'+ this.grid[i].value +'</div></div>');
 	      } else {
-	      	 $('#grid').append('<div id="'+i+'" class="cell"></div>');
+	      	 $('#grid').append('<div id="'+i+'" class="cell"> <div>'+ this.grid[i].value + '</div></div>');
 	      }
 	    }
+	  },
+
+	  clearBoard: function(){
+	    
 	  }
 	}
 
@@ -65,6 +73,8 @@ $(document).ready(function(){
 	  var y = new Board();
 	  y.createBoard();
 	  console.log(y);
+	  y.showBoard();
+	  y.updateValue(0,'O');
 	  y.showBoard();
 	}
 });

@@ -2,4 +2,13 @@
 
 	- Added constructors for board and cell
 
+11/15/2017
+
+	- Added css properties
+
 	
+11/17/2017
+	- Added UpdateValue function
+
+	To do:
+		- Work on clearboard function

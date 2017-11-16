@@ -11,10 +11,18 @@
 
 
 .cell{
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   background-color: red;
   display: inline-block;
+  border: 1px solid black;
+}
+
+.cell > div{
+  position: relative;
+  left: 10px;
+  top: 10px;
+  font-size: 24px;
 }
 
 
