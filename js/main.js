@@ -14,7 +14,7 @@ $(document).ready(function(){
 	}
 
 	function Board(){
-	  this.grid = '';
+	  this.grid = ' ';
 
 	}
 
@@ -38,13 +38,16 @@ $(document).ready(function(){
 	      if(i == 3 || i == 6){
 	        $('#grid').append('<div id="'+i+'" class="cell block"> <div>'+ this.grid[i].value +'</div></div>');
 	      } else {
-	      	 $('#grid').append('<div id="'+i+'" class="cell"> <div>'+ this.grid[i].value + '</div></div>');
+	      	 $('#grid').append('<div id="'+i+'" class="cell"><div>'+ this.grid[i].value + '</div></div>');
 	      }
 	    }
 	  },
 
 	  clearBoard: function(){
-	    
+	    $('#grid').html('');
+	    //for(var i = 0 ; i < this.grid.length; i++){
+	    //  this.grid[i].value = '';
+	    //}
 	  }
 	}
 
@@ -74,7 +77,10 @@ $(document).ready(function(){
 	  y.createBoard();
 	  console.log(y);
 	  y.showBoard();
-	  y.updateValue(0,'O');
+	  y.updateValue(0,'x');
+	  y.updateValue(2,'o');
+	  y.showBoard();
+	  y.clearBoard();
 	  y.showBoard();
 	}
 });
