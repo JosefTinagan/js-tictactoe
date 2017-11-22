@@ -34,6 +34,7 @@ $(document).ready(function(){
 	  },
 
 	  showBoard: function(){
+	  	$('#grid').html('');
 	    for(var i = 0; i < 9; i++){
 	      if(i == 3 || i == 6){
 	        $('#grid').append('<div id="'+i+'" class="cell block"> <div>'+ this.grid[i].value +'</div></div>');
@@ -44,7 +45,9 @@ $(document).ready(function(){
 	  },
 
 	  clearBoard: function(){
-	    $('#grid').html('');
+	    for(var i = 0; i < this.grid.length; i++){
+	      this.grid[i].value = '';
+	    }
 	    //for(var i = 0 ; i < this.grid.length; i++){
 	    //  this.grid[i].value = '';
 	    //}
