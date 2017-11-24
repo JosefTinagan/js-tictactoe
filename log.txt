@@ -15,3 +15,6 @@
 
 11/23/2017
 	- Finished clearboard function
+
+11/24/2017
+	- Figure out main logic

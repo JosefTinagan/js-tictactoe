@@ -70,6 +70,11 @@ $(document).ready(function(){
 	}
 
 	$('.test').on('click',doSomething);
+	$('#grid').on('click',  function(e){
+	  console.log('clicked!');
+	  console.log(e.target);
+	  console.log(e.target.html);
+	});
 
 	function doSomething(){
 	  var x = new Cell ('beybi');
@@ -84,6 +89,8 @@ $(document).ready(function(){
 	  y.updateValue(2,'o');
 	  y.showBoard();
 	  y.clearBoard();
+	  y.showBoard();
+	  y.updateValue(0,'o');
 	  y.showBoard();
 	}
 });
