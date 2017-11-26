@@ -70,10 +70,11 @@ $(document).ready(function(){
 	}
 
 	$('.test').on('click',doSomething);
+
 	$('#grid').on('click',  function(e){
 	  console.log('clicked!');
-	  console.log(e.target);
-	  console.log(e.target.html);
+	  var x = $(e.target).html();
+	  $(e.target).text('x');
 	});
 
 	function doSomething(){
