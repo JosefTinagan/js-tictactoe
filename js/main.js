@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+	function Player(name='Anon',sign='x'){
+	  this.name = name;
+	  this.sign = sign;
+	}
 
 	function Cell(value=''){
 	  this.value = value;
@@ -74,7 +78,9 @@ $(document).ready(function(){
 	$('#grid').on('click',  function(e){
 	  console.log('clicked!');
 	  var x = $(e.target).html();
-	  $(e.target).text('x');
+	  var player = new Player();
+
+	  $(e.target).text(player.sign);
 	});
 
 	function doSomething(){
