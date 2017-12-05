@@ -18,3 +18,6 @@
 
 11/24/2017
 	- Figure out main logic
+
+12/5/2017
+	- Added rows,columns and diagonals function

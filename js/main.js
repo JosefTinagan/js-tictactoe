@@ -25,6 +25,10 @@ $(document).ready(function(){
 	Board.prototype = {
 	  constructor: Board,
 
+	  getValue: function(x){
+	    return this.grid[x];
+	  },
+
 	  updateValue: function(param,new_value){
 	    this.grid[param].value = new_value;
 	  },
@@ -48,13 +52,43 @@ $(document).ready(function(){
 	    }
 	  },
 
+	  checkBoard: function(){
+	  	var x = this.rows();
+	  	var y = this.columns();
+	  	var z = this.diagonals();
+	    console.log(x);
+	    console.log(y);
+	    console.log(z);
+	  },
+
 	  clearBoard: function(){
 	    for(var i = 0; i < this.grid.length; i++){
 	      this.grid[i].value = '';
 	    }
-	    //for(var i = 0 ; i < this.grid.length; i++){
-	    //  this.grid[i].value = '';
-	    //}
+	  },
+
+	  rows: function(){
+	  	//console.log(this.getValue(0));
+	     return [
+	       [this.getValue(0),this.getValue(1),this.getValue(2)],
+	       [this.getValue(3),this.getValue(4),this.getValue(5)],
+	       [this.getValue(6),this.getValue(7),this.getValue(8)]
+	    ]
+	  },
+
+	  columns: function(){
+	  	return [
+	  	  [this.getValue(0),this.getValue(3),this.getValue(6)],
+	  	  [this.getValue(1),this.getValue(4),this.getValue(7)],
+	  	  [this.getValue(2),this.getValue(5),this.getValue(8)]
+	  	]
+	  },
+
+	  diagonals: function(){
+	    return [
+	      [this.getValue(0),this.getValue(4),this.getValue(8)],
+	      [this.getValue(2),this.getValue(4),this.getValue(6)]
+	    ]
 	  }
 	}
 
@@ -72,6 +106,8 @@ $(document).ready(function(){
 	    }
 	  }
 	}
+
+
 
 	$('.test').on('click',doSomething);
 
@@ -99,5 +135,6 @@ $(document).ready(function(){
 	  y.showBoard();
 	  y.updateValue(0,'o');
 	  y.showBoard();
+	  y.checkBoard();
 	}
 });
