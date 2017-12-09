@@ -59,6 +59,16 @@ $(document).ready(function(){
 	    console.log(x);
 	    console.log(y);
 	    console.log(z);
+	    
+	    var temp = [x,y,z];
+	    var length = temp.length;
+
+	    console.log(length);
+	    console.log(temp);
+	    for(var i = 0; i < temp.length; i++){
+	      console.log(temp[i].length);
+	    }
+
 	  },
 
 	  clearBoard: function(){
