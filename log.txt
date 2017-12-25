@@ -21,3 +21,8 @@
 
 12/5/2017
 	- Added rows,columns and diagonals function
+
+12/25/2017
+	- Created abunch of console logs
+
+	- Figure out how to check

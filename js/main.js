@@ -13,6 +13,7 @@ $(document).ready(function(){
 	Cell.prototype = {
 	  constructor: Cell,
 	  changeValue: function(new_value){
+	  	console.log("Change Value Function");
 	    this.value = new_value;
 	  }
 	}
@@ -26,14 +27,17 @@ $(document).ready(function(){
 	  constructor: Board,
 
 	  getValue: function(x){
+	  	console.log("Get Value Function");
 	    return this.grid[x];
 	  },
 
 	  updateValue: function(param,new_value){
-	    this.grid[param].value = new_value;
+	  	console.log("Update Value Function");
+	    this.grid[param].changeValue(new_value);
 	  },
 
 	  createBoard: function(){
+	  	console.log("Create Board Function");
 	    var temp = [];
 	    for(var i = 0; i < 9; i++){
 	      temp.push(new Cell());
@@ -42,6 +46,7 @@ $(document).ready(function(){
 	  },
 
 	  showBoard: function(){
+	  	console.log("Show Board Function");
 	  	$('#grid').html('');
 	    for(var i = 0; i < 9; i++){
 	      if(i == 3 || i == 6){
@@ -53,6 +58,7 @@ $(document).ready(function(){
 	  },
 
 	  checkBoard: function(){
+	  	console.log("Check Board Function");
 	  	var x = this.rows();
 	  	var y = this.columns();
 	  	var z = this.diagonals();
@@ -63,12 +69,17 @@ $(document).ready(function(){
 	    var temp = [x,y,z];
 	    var length = temp.length;
 
-	    console.log(length);
-	    console.log(temp);
-	    for(var i = 0; i < temp.length; i++){
-	      console.log(temp[i].length);
-	    }
+	    console.log("Check if win");
+	    //console.log(temp);
 
+	    //Continue This
+	    for(var i = 0; i < temp.length; i++){
+	      //console.log(temp[i]);
+	      for(var j = 0; j < temp[i].length; j++){
+	        console.log(temp[i][j]);
+	      }
+	    }
+	    
 	  },
 
 	  clearBoard: function(){
@@ -102,22 +113,6 @@ $(document).ready(function(){
 	  }
 	}
 
-	var $grid = {
-	  value: '',
-	  showGrid: function(){
-	    for(var i = 0; i < value.length;i++){
-
-	    }
-	  },
-	  createGrid: function(){
-	  	var x = 9;
-	    for(var i = 0; i < x; i++){
-	      $cell.new
-	    }
-	  }
-	}
-
-
 
 	$('.test').on('click',doSomething);
 
@@ -144,7 +139,17 @@ $(document).ready(function(){
 	  y.clearBoard();
 	  y.showBoard();
 	  y.updateValue(0,'o');
+	  y.updateValue(1,'x');
+	  y.updateValue(2,'o');
+	  y.updateValue(3,'o');
+	  y.updateValue(4,'o');
+	  y.updateValue(5,'o');
+	  y.updateValue(6,'x');
+	  y.updateValue(7,'o');
+	  y.updateValue(8,'x');
+	  y.updateValue(8,'o');
 	  y.showBoard();
 	  y.checkBoard();
+
 	}
 });
