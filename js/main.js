@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+	//Prototypign Array
+
+	Array.prototype.allSame = function(){
+
+	  for(var i = 1; i < this.length; i++){
+	    if(this[i].value !== this[0].value){
+	      return false;
+	    }
+	  }
+
+	  return true;
+	}
+
 	function Player(name='Anon',sign='x'){
 	  this.name = name;
 	  this.sign = sign;
@@ -72,11 +85,17 @@ $(document).ready(function(){
 	    console.log("Check if win");
 	    //console.log(temp);
 
-	    //Continue This
 	    for(var i = 0; i < temp.length; i++){
-	      //console.log(temp[i]);
 	      for(var j = 0; j < temp[i].length; j++){
 	        console.log(temp[i][j]);
+	        var c = temp[i][j].allSame();
+	      // var c = !!temp[i][j].reduce(function(a,b){ return (a.value === b.value) ? a.value : NaN;});
+	        if(c == true){
+	          console.log('win');
+	          return;
+	        } else {
+	          console.log('still not win');
+	        }
 	      }
 	    }
 	    
